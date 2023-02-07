@@ -16,7 +16,12 @@ return new class extends Migration
         Schema::create('chirps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('message');
+            $table->string('LastName');
+            $table->string('FirstName');
+            $table->string('MiddleName');
+            $table->string('Address');
+            $table->string('Email');
+            $table->string('ContactNumber');
             $table->timestamps();
         });
     }

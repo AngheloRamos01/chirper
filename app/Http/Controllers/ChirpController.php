@@ -38,7 +38,12 @@ class ChirpController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'message' => 'required|string|max:255',
+            'LastName' => 'required|string|max:255',
+            'FirstName' => 'required|string|max:255',
+            'MiddleName' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Email' => 'required|string|max:255',
+            'ContactNumber' => 'required|string|max:11',
         ]);
  
         $request->user()->chirps()->create($validated);
@@ -84,7 +89,12 @@ class ChirpController extends Controller
         $this->authorize('update', $chirp);
  
         $validated = $request->validate([
-            'message' => 'required|string|max:255',
+            'LastName' => 'required|string|max:255',
+            'FirstName' => 'required|string|max:255',
+            'MiddleName' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Email' => 'required|string|max:255',
+            'ContactNumber' => 'required|string|max:11',
         ]);
  
         $chirp->update($validated);

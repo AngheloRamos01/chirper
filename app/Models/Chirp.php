@@ -10,7 +10,7 @@ class Chirp extends Model
     use HasFactory;
 
     protected $fillable = [
-        'message',
+        'LastName','FirstName','MiddleName','Address','Email','ContactNumber',
     ];
     
     protected $dispatchesEvents = [

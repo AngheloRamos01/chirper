@@ -3,10 +3,40 @@
         <form method="POST" action="{{ route('chirps.store') }}">
             @csrf
             <textarea
-                name="message"
-                placeholder="{{ __('What\'s on your mind?') }}"
+                name="LastName"
+                placeholder="{{ __('What\'s Last Name?') }}"
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message') }}</textarea>
+            >{{ old('LastName') }}</textarea>
+
+            <textarea
+                name="FirstName"
+                placeholder="{{ __('What\'s First Name?') }}"
+                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('FirstName') }}</textarea>
+
+            <textarea
+                name="MiddleName"
+                placeholder="{{ __('What\'s Middle Name?') }}"
+                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('MiddleName') }}</textarea>
+
+            <textarea
+                name="Address"
+                placeholder="{{ __('What\'s your Address?') }}"
+                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('Address') }}</textarea>
+
+            <textarea
+                name="Email"
+                placeholder="{{ __('What\'s your Email') }}"
+                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('Email') }}</textarea>
+
+            <textarea
+                name="ContactNumber"
+                placeholder="{{ __('What\'s your Contact Number?') }}"
+                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('ContactNumber') }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
@@ -50,7 +80,13 @@
                                 </x-dropdown>
                             @endif
                         </div>
-                        <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
+                        <p class="mt-4 text-lg text-gray-900">Last Name: {{ $chirp->LastName }}</p>
+                        <p class="mt-4 text-lg text-gray-900">First Name: {{ $chirp->FirstName }}</p>
+                        <p class="mt-4 text-lg text-gray-900">Middle Name: {{ $chirp->MiddleName }}</p>
+                        <p class="mt-4 text-lg text-gray-900">Address: {{ $chirp->Address }}</p>
+                        <p class="mt-4 text-lg text-gray-900">Email: {{ $chirp->Email }}</p>
+                        <p class="mt-4 text-lg text-gray-900">Contact Number: {{ $chirp->ContactNumber }}</p>
+                        
                     </div>
                 </div>
             @endforeach
